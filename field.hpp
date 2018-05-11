@@ -7,12 +7,12 @@ using namespace std;
 
 class Field : public Widget{
 
-    bool checked=false;
+    bool checked=false,fix=false;
     function<void()> enter;
     char _content=' ';
 public:
 
-    inline Field(function<void()> Fun, int x, int y, int sx, int sy,char content): Widget(x,y,sx,sy),enter(Fun){checked=_checked();if(content!=' ')checked=true;_content=content;};
+    inline Field(function<void()> Fun, int x, int y, int sx, int sy,char content): Widget(x,y,sx,sy),enter(Fun){if(content!=' ')fix=true;_content=content;};
     virtual void draw() const;
     void handle(genv::event ev);
     inline int _checked(){return checked;}
