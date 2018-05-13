@@ -13,7 +13,7 @@ int main()
 {
     srand (time(NULL));
     vector<feladat> v=vect();
-    gout.open(XX*9+9,YY*9+9);
+    gout.open(XX*9+9+300,YY*9+9);
     gout<<color(211,15,10)<<move_to(0,0)<<box(XX*9+8,YY*9+8);
     vector<Widget*> vv;
     int r=rand()%4;
@@ -26,6 +26,15 @@ int main()
     vv.push_back(f);
     }
     }
+    gout<<color(250,250,250)<<move_to(XX*9+9+5,15)<<text("Ures mezokbe belekattintva irhatsz")
+    <<move_to(XX*9+9+5,45)<<text("Enterrel lezárhatod az adott ")
+    <<move_to(XX*9+9+5,60)<<text("mezot hogy ne tudd irni.")
+    <<move_to(XX*9+9+5,75)<<text("Visza is tudod allitani irhatora.")
+    <<move_to(XX*9+9+5,115)<<text("Szabalyok:")
+    <<move_to(XX*9+9+5,130)<<text("Minden szambol pontosan egy van")
+    <<move_to(XX*9+9+5,145)<<text("minden sorban, oszlopban es 3x3ban.")
+    <<move_to(XX*9+9+5,180)<<text("A jateknak vege van ha mindent")
+    <<move_to(XX*9+9+5,195)<<text("helyesen veglegesitesz.");
     loop(vv);
     return 0;
 }
